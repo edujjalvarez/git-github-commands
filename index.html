@@ -1,0 +1,585 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Guía de comandos de Git & GitHub</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">		
+		<!-- JS -->
+		<script type="text/javascript" src="plugins/jquery-3.1.0/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="row ggh-header">
+			<h2>Guía de comandos de Git & GitHub
+		</div>
+		<div class="row ggh-content">
+			<div class="row ggh-table-row ggh-table-row-header">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-title ggh-table-col-header">
+					<span>Comando</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command ggh-table-col-header">
+					<span>Descripción breve</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description ggh-table-col-header">
+					<span>Descripción extensa</span>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Instalar Git en Windows y abrir la consola Git Bash</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>cd ~/.ssh</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Comprobar si existe una clave SSH en el equipo</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Si existe una clave SSH en el equipo nos posicionará en el directorio .ssh y sino nos mostrará un mensaje diciendo que no existe tal directorio.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>ls</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Listar carpetas y archivos contenidos en un determinado directorio</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>mkdir key_backup</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Crear directorio "key_backup"</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Con este comando creamos un directorio llamado "key_backup" para guardar una copia de las claves que ya existen para posteriormente borrarlas y crear una nueva clave SSH para Git.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>cp id_rsa* key_backup</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Copiar archivos en la carpeta "key_backup"</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Copiamos los archivos que empiecen con "id_rsa" dentro de la carpeta "key_backup". Esto copiará los archivos "id_rsa" y "id_rsa.pub" a la carpeta "key_backup".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>rm id_rsa*</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Borrar archivos</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Esto borrará los archivos que empiecen con "id_rsa" del directorio actual.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>ssh-keygen -t rsa -C "edujjalvarez@gmail.com"</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Crear nueva clave SSH con un email válido</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Este proceso solicitará ingresar una ruta para almacenar la clave generada y una contraseña dos veces para poder confirmarla.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Crear una cuenta en GitHub y agregar la clave SSH generada anteriormente.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>ssh git@github.com</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Comprobar conexión con GitHub</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git config --global user.name "edujjalvarez"</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Cofigurar usuario de Git</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git config --global user.email "edujjalvarez@gmail.com"</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Cofigurar email de Git</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Configurar TOKEN de la API de GitHub en la sección Settings del sitio Web.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git config --global github.user edujjalvarez@gmail.com</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Configurar usuario de GitHub en Git</span>
+				</div>				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git config --global github.token 1575876bc1296e216aae8b692be5d2251b8bf6dc</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Configurar token de la API de GitHub en Git</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>mkdir git-repositories</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Crear directorio "git-repositories" para almacenar los proyectos Git</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>cd git-repositories/</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Posicionarse en la carpeta "git-repositories"</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>mkdir primer-proyecto</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Crear directorio "primer-proyecto" dentro del directorio "git-repositories"</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>cd primer-proyecto/</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Posicionarse en la carpeta "primer-proyecto"</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git init</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Iniciar el repositorio</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>touch README.md</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agregar archivo "README.md" al repositorio</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git add README.md</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agregar el archivo "README.md" a la lista de cambios a subir</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Esto coloca el archivo "README.md" en el estado STAGED. Que es el estado intermedio de los tres estados que maneja Git (MODIFIED, STAGED, COMMITED).</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git commit -m "first commit"</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Realizamos un comit para pasar los cambios del estado STAGED a COMMITED</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>En este punto los cambios ya quedan guardados en el repositorio.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git remote add origin https://github.com/edujjalvarez/primer-proyecto.git</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agregamos los cambios al repositorio remoto "primer-proyecto" dentro de GitHub</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>En este punto los cambios ya quedan guardados en el repositorio.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git push -u origin master</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Empujamos los cambios en el repositorio remoto "primer-proyecto"</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git init</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Coniverte cualquier carpeta o directorio de nuestro sistema de archivos, que puede estar almacenada en cualquier lugar del equipo, en un repositiorio de Git.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git add *.cs</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agrega todos los archivos con extensión ".cs" contenidos en un directorio convertido en repositorio de Git a la sección STAGED donde quedan pendientes para el guardarse en el próximo COMMIT.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git add -A</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agrega todos los archivos y carpetas de un repositorio a la sección STAGED.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Todos se refiere a los archivos y carpetas NUEVOS, MODIFICADOS y ELIMINADOS. Es equivalente a "git add --all".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row ggh-table-row-marcado">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git add .</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agrega todos los archivos y carpetas de un repositorio a la sección STAGED.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Todos se refiere a los archivos y carpetas NUEVOS, MODIFICADOS y ELIMINADOS.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git add --ignore-remmoval .</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agrega todos los archivos y carpetas NUEVOS y MODIFICADOS (NO ELIMINADOS) de un repositorio a la sección STAGED.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git add -u</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Agrega todos los archivos y carpetas MODIFICADOS y ELIMINADOS (NO NUEVOS) de un repositorio a la sección STAGED.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Es equivalente a "git add --update".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git clone https://github.com/twbs/bootstrap.git</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Clonar un repositorio en nuestro sistema de archivos.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>Esto crea una directorio nuevo para el repositorio en la ubicación donde estemos posicionados. En este caso estoy clonando el repositorio oficial de Bootstrap.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git clone https://github.com/twbs/bootstrap.git nombre-carpeta</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Clonar un repositorio en nuestro sistema de archivos.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<p>A diferencia del comando anterior esto clonara el repositorio dentro de la carpeta "nombre-carpeta", creandola si fuese necesario.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Ciclo de vida de un archivo Git</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">
+					<a href="img/ciclo-de-vida-archivo-git.png" target="_blank"><img src="img/ciclo-de-vida-archivo-git.png" style="width: 100%;" /></a>
+					<span>Estados de un archivo:</span>
+					<p>Tracked: Rastreado.</p>
+					<p>Untracked: No rastreado.</p>
+					<p>Unmodified: No modificado.</p>
+					<p>Modified: Modificado.</p>
+					<p>Staged: Staged.</p>
+					<p>Commited: En este punto al hacer un COMMIT el archivo vuelve al estado MODIFIED.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git status</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Checkear en que estado del ciclo de vida se encuentran los archivos.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git reset HEAD README.md</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Quitar el archivo del STAGE para que no se envie en el próximo COMMIT.</span>
+				</div>				
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git reset HEAD borrar/</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Quitar el directorio "borrar" y todo su contenido del STAGE para que no se envie en el próximo COMMIT.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>---</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>El archivo .gitignore</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Este archivo se utiliza para que el sistema ignore ciertos archivos al realizar cambios. Esto se da frecuentemente cuando se utilizan IDE's para el desarrollo ya que estos generan archivos temporales que utiliza cada equipo para trabajar correctamente pero no forman parte del código fuente puro del proyecto. Existen muchos patrones para ignorar archivos y directorios que se deben colocar en un archivo sin nombre y con extensión ".gitignore".</p>
+					<a href="recursos/gitignore-samples/ejemplo-basico.gitignore" target="_blank">Ejemplo Básico</a>
+					<p>La primera línea es obligatorio en todo archivo ".gitignore".</p>
+					<a href="recursos/gitignore-samples/otro-ejemplo.gitignore" target="_blank">Otro Ejemplo</a> |
+					<a href="http://www.jedit.org/users-guide/globs.html" target="_blank">Guía de Patrones</a>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git diff</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Muestra los cambios que se hicieron en los archivos.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Nota: "git diff" solo muestra las diferencias de los archivos modificados que NO ESTAN EN EL STAGE. Esto quiere decir que si hubiera un archivo que ha sido modificado y puesto en el STAGE dichos cambios (diferencia) no se mostrarn con el comando "git diff".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git diff --staged</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Muestra los cambios que se hicieron en los archivos.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Nota: A diferencia del comando anterior este si muestra los cambios en los archivos que hayan sido modificados y puestos en el STAGED.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git commit -v -m "Esto es una descripción del COMMIT"</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Envia un COMMIT con el detalle de los cambios (diferencias) entre archivos.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto agrega un detalle adicional adjunto al COMMIT donde se detalla los cambios que se hicieron en los archivos. El detalle es el mismo que nos mostraría el comando "git diff" o "git diff --sataged", aparenciendo con un signo "+" adelante de la línea si es una línea que se agrego y con un "-" si es una línea que se quito.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git commit -m "Esto es una descripción del COMMIT" -a</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Envia un COMMIT saltandose el STAGE.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto envia los cambios de los archivos modificados aunque estos no hayan sido puestos en el STAGE con el comando "git add".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git rm archivo-borrar.txt</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Borrar archivo.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto borra el archivo del directorio de trabajo. Aunque el archivo haya sido borrado de manera física del directorio de trabajo GIT sigue rastreandolo. Con este comando se borra definitivamente y ya no queda rasterado por GIT. Si no fue borrado de manera física este comando lo borra físicamente y lo coloca en el STAGE para el próximo COMMIT. Si el archivo ya esta en el STAGE este comando no funciona.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git rm -f archivo-borrar.txt</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Borrar archivo.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto borra el archivo aunque este en el STAGE. Se fuerza el borrado.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git rm --cached archivo-borrar.txt</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Borrar archivo.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto borra el archivo del STAGE pero no físicamente (del disco rígido).</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git rm \*~</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Borrar archivo.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto borra todos los archivos que finalizen con "~".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git rm log/ \*.log</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Borrar archivo.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto borra todos los archivos con extensión ".log" que estan dentro de la carpeta "log".</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>git mv nombre-viejo.txt nombre-nuevo.txt</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Renombrar archivo.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<p>Esto renombra el archivo.</p>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Enlace con una lista de comandos.</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<a href="http://help.github.com/git-cheat-sheets/" target="_blank">Click aquí para abrir el enalce</a>
+					|
+					<a href="http://www.ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank">Otro enlace.</a>
+				</div>
+			</div>
+			<div class="row ggh-table-row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-command">
+					<span>---</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ggh-table-col-description1">
+					<span>Enlace libro PRO GIT (Español).</span>
+				</div>
+				<div class="col-lg-4 col-md-4col-sm-12 col-xs-12 ggh-table-col-description2">					
+					<a href="https://git-scm.com/book/es/v1" target="_blank">Primera Edición</a>
+					|
+					<a href="https://git-scm.com/book/es/v2" target="_blank">Segunda Edición</a>
+				</div>
+			</div>		
+		</div>
+	</body>
+</html> 

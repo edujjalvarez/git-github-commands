@@ -1,0 +1,20 @@
+body {
+	margin: 25px 100px 25px 100px;
+}
+
+.ggh-header {
+	text-align: center;
+}
+
+.ggh-table-row {
+	border-bottom: 1px solid #cccccc;
+}
+
+.ggh-table-row-marcado {
+	background-color: yellow;
+}
+
+.ggh-table-col-header {
+	font-weight: 500;
+	font-size: 20px;
+}

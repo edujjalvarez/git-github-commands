@@ -1,0 +1,4 @@
+$ cat .gitignore
+# Esto es un comentario
+*.[oa]
+*~

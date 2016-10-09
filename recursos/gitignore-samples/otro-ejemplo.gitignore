@@ -1,0 +1,7 @@
+$ cat .gitignore
+# Esto es un comentario
+*.a # Esto ignora archivos con extensión .a
+!lib.a # pero no ignora archivos con extensión lib.a, aunque estemos ignorando los archivos con extensión .a en la línea anterior
+/TODO # Esto ignora solo el archivo raíz TODO pero no los subdirectorios del mismo.
+build/ # Esto ignora todos los archivos en el directorio build/
+doc/*.txt # Esto ignora por ejemplo doc/notes.txt pero no ignora doc/server/arch.txt
